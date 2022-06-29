@@ -1,0 +1,112 @@
+import java.util.Scanner;
+
+public class ex4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner leitor = new Scanner(System.in);
+
+	int x = 1;
+	int div = 0;
+	int numero;
+	System.out.println("DIGITE 0 PARA SAIR");
+	do {System.out.println("Digite um numero: ");
+ numero = leitor.nextInt();
+ if (numero == 0){
+	 break;
+ }
+ for ( x = 1; x <= numero ; x++) {
+
+	 if (numero % x == 0) {
+	div++;
+}
+}
+if (div == 2) {
+	System.out.println("O numero " +numero +" e primo");
+}
+else {
+	System.out.println("O numero " +numero +" nao e primo");
+}
+div = div - div;
+ 
+		}while (numero != 0); 
+	System.out.println("0 DIGITADO, FINALIZANDO PROGRAMA...");
+	}
+}
+
+____________________________________________________________________________________________
+
+import java.util.Scanner;
+
+public class ex5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner leitor = new Scanner(System.in);
+        
+        int z = 0;
+		int x = 1;
+		int numero;
+		
+		System.out.println("DIGITE 0 PARA SAIR");
+		do {System.out.println("Digite um numero para saber se ele e triangular: ");
+	 numero = leitor.nextInt();
+	 if (numero == 0){
+		 break;
+	 }
+	 do { x++;
+		z = x * (x+1) * (x+2);
+	 }while (z < numero);
+		 
+	 if (z == numero) {
+				System.out.println("O numero "+numero +" e triangular");
+	}
+	else {
+		System.out.println("O numero "+numero +" nao e triangular");
+	}
+x = x - x;
+	 
+
+			}while (numero != 0); 
+		System.out.println("0 DIGITADO, FINALIZANDO PROGRAMA...");
+		}
+	
+}
+
+____________________________________________________________________________________________
+
+		Scanner leitor = new Scanner(System.in);
+
+		int numero;
+		int r1 = 0;
+		int r2 = 0;
+		int r3 = 0;
+		int r4 = 0;
+		int r5 = 0;
+		
+		do {System.out.println("Digite um numero de 4 algarismos: ");
+		 numero = leitor.nextInt();
+		 
+		 if (numero < 1000){
+			 break;}
+		 if (numero > 9999){
+			 break;}
+		 
+		 r1 = numero / 100;
+		 r2 = r1 * 100;
+		 r3 = numero - r2;
+		 r4 = r1 + r3;
+		 r5 = r4*r4;
+		 System.out.println(+r1 +" + "+r3 +" = "+r4 +" ,"+r4 +" AO QUADRADO: " +r5);
+	if (r5 == numero) {
+		System.out.println("APRESENTA MESMA CARACTERISTICA");
+	}
+	else {
+		System.out.println("NAO APRESENTA MESMA CARACTERISTICA");
+	}
+		}while (numero >= 1000  & numero <= 9999);
+		System.out.println("NUMERO INVALIDO, ENCERRANDO PROGRAMA... ");
+		}
+}

@@ -1,0 +1,132 @@
+import java.util.Scanner;
+
+public class vetores1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// PROGAMA QUE LE 4 NOTAS E DIZ A MEDIA DELAS
+		
+		Scanner leitor = new Scanner(System.in);
+
+		double nota[] = new double[4];
+		double M = 0;
+		double MF = 0;
+		
+		for (int C = 0 ; C < 4 ; C++ ) {
+			System.out.println("Digite uma nota:");
+			nota[C] = leitor.nextDouble();
+		}
+	for (int C2 = 0 ; C2 < 4 ; C2++) {
+		M = M + nota[C2];
+	}
+	MF = M/4;
+	System.out.println("Media = "+MF);
+
+		}
+	}	
+
+____________________________________________________________________________________________
+
+import java.util.Scanner;
+
+public class vetores2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//Lê 5 nomes e notas de uma turma, calcula e exibe a média das notas da turma e em seguida exibe a relação de nomes com notas e diga se o aluno esta aprovado ou desaprovado
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		String nome[] = new String[5];
+		double nota[] = new double[5];
+		double M = 0;
+		double MF = 0;
+		String A[] = new String[5];
+		
+		for (int C = 0 ; C < 5 ; C++) {
+		System.out.println("Digite um nome");
+		//ta vendo essa porra aqui que lê, pq ela e assim? nao sei mas é assim e pronto! se nao nao funfa
+        nome[C] = new Scanner(System.in).nextLine();
+		System.out.println("Digite a nota de "+nome[C]);
+        nota[C] = new Scanner(System.in).nextDouble();
+        if (nota[C] >= 6){A[C] = "APROVADO";
+        }
+        if (nota[C] < 6){A[C] = "REPROVADO";
+        }
+		}
+		for (int C2 = 0 ; C2 < 5 ; C2++) {
+		M = M + nota[C2];
+		MF = M/5;
+		}
+		System.out.println("MEDIA DA TURMA: "+MF);
+		for (int C3 = 0 ; C3 < 5 ; C3++) {
+		System.out.println("Nota de "+nome[C3] +" = "+nota[C3] +", o aluno esta: " +A[C3]);
+		
+		}
+		
+	}
+}
+
+____________________________________________________________________________________________
+
+import java.util.Scanner;
+
+public class vetores3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//Leia um conjunto de notas, cuja quantidade seja determinada pelo usuário. Calcule a média de todas elas. Exiba o conjunto das notas maiores do que a média calculada. Em seguida, de forma agrupada, exiba o outro conjunto de notas (menores do que a média).
+	
+		Scanner leitor = new Scanner(System.in);
+
+		int Q = 0;
+		double M = 0;
+		double MF = 0;
+		
+		System.out.println("digite a quantidade de notas");
+		Q = leitor.nextInt();
+		double nota[] = new double [Q];
+		for (int C = 0 ; C < Q ; C++) {
+			System.out.println("digite uma nota");
+			nota[C] = leitor.nextDouble();
+			M = M + nota[C];
+		}
+		MF = M/Q;
+		System.out.println("MEDIA: "+MF);
+		}
+	}
+
+____________________________________________________________________________________________
+
+public class Ordenacao {
+    public static void main(String[] args) {
+        // declara um vetor para 5 inteiros
+        int[] num = new int[5];
+ 
+        System.out.println("Sorteando números...");
+        // preenche os elementos do vetor com números aleatórios de 10 a 30
+        for(int i = 0; i < 5; i++) {
+            num[i] = (int)(Math.random()*21)+10; 
+        }
+        // a partir deste ponto, o algoritmo irá colocar os números em ordem crescente
+        int aux;
+        boolean trocou = true;
+        while(trocou) {
+            trocou = false;
+            for(int i = 0; i < 4; i++) {
+                if(num[i] > num[i+1]) {
+                    aux      = num[i];
+                    num[i]   = num[i+1];
+                    num[i+1] = aux;
+                    trocou   = true;
+                }
+            }
+        }
+        // Exibição do resultado da ordenação
+        System.out.println("Vetor ordenado:");
+        for(int i = 0; i < 5; i++) {
+            System.out.println(num[i]); 
+        }
+    }
+}
